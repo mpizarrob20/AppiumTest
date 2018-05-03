@@ -68,7 +68,7 @@ public class TestWsp {
     //Icon Information
     @When("^the user clicks on the information icon$")
     public void the_user_clicks_on_the_information_icon() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         WebDriverWait wait = new WebDriverWait(driver, 10);
         MobileElement icon_information = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(objects_test.iconInformation)));
         icon_information.click();
@@ -76,6 +76,7 @@ public class TestWsp {
 
     @And("^access information$")
     public void access_information() throws InterruptedException {
+        Thread.sleep(3000);
         WebDriverWait wait = new WebDriverWait(driver, 10);
         Assert.assertEquals(driver.findElement(By.xpath(objects_test.tableReservation)).getText(), "TABLE RESERVATION");
         MobileElement icon_behind = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(objects_test.iconBehind)));
@@ -90,14 +91,15 @@ public class TestWsp {
     //Icon gallery
     @When("^the user clicks on the gallery icon$")
     public void the_user_clicks_on_the_gallery_icon() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         WebDriverWait wait = new WebDriverWait(driver, 10);
         MobileElement icon_gallery = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(objects_test.iconGallery)));
         icon_gallery.click();
     }
 
-    @And("^access_the_gallery$")
+    @And("^access the gallery$")
     public void access_the_gallery() throws InterruptedException {
+        Thread.sleep(3000);
         WebDriverWait wait = new WebDriverWait(driver, 10);
         MobileElement my_photos = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(objects_test.myPhotos)));
         my_photos.click();
@@ -108,6 +110,35 @@ public class TestWsp {
     }
 
     //Login
+    @When("^user enter the login view$")
+    public void user_enter_the_login_view() throws InterruptedException {
+        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        MobileElement user_button = (MobileElement) driver.findElement(By.id(objects_test.user));
+        user_button.click();
+
+        MobileElement login_opcion = (MobileElement) driver.findElement(By.xpath(objects_test.login));
+        login_opcion.click();
+
+    }
+
+    @And("^enter (.*),(.*) and (.*)$")
+    public void enter_personal_data(String name, String mail, String password) throws InterruptedException {
+        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        MobileElement user_name = (MobileElement) driver.findElement(By.id(objects_test.name));
+        user_name.sendKeys(name);
+
+        MobileElement user_mail = (MobileElement) driver.findElement(By.id(objects_test.mail));
+        user_mail.sendKeys(mail);
+
+        MobileElement user_password = (MobileElement) driver.findElement(By.id(objects_test.password));
+        user_password.sendKeys(password);
+
+        MobileElement sign_button = (MobileElement) driver.findElement(By.id(objects_test.signUp));
+        sign_button.click();
+    }
 
 
 }
