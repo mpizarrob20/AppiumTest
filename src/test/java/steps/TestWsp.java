@@ -136,7 +136,7 @@ public class TestWsp {
         MobileElement user_password = (MobileElement) driver.findElement(By.id(objects_test.password));
         user_password.sendKeys(password);
 
-        MobileElement sign_button = (MobileElement) driver.findElement(By.id(objects_test.signUp));
+        MobileElement sign_button = (MobileElement) driver.findElement(By.xpath(objects_test.signUp));
         sign_button.click();
     }
 

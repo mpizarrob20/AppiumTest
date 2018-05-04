@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"C:\\Users\\mpizarro\\IdeaProjects\\appiumTestExample\\src\\test\\java\\feature\\" +
                 ""}
-        ,format = {"pretty", "html:results/cucumber", "json:target/cucumber-reports/Cucumber.json"}
+        ,format = {"pretty", "html:results/cucumber", "json:target/Cucumber.json"}
 )
 
 public class TestRunner {

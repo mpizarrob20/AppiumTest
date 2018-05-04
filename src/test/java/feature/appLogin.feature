@@ -10,4 +10,4 @@ Feature: Verify login functionality
 
     Examples:
       |name|mail|password|
-      |Maydalis|mpizarrob20@gmail.com|maydalis12345|
+      |May|maiditabarata@gmail.com| az12345WsxEdc234|
