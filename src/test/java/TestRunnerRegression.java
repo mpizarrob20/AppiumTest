@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
         features = {"C:\\Users\\mpizarro\\IdeaProjects\\appiumTestExample\\src\\test\\java\\feature\\" +
                 ""}
         ,format = {"pretty", "html:results/cucumber", "json:target/Cucumber.json"}
-        ,tags = {"@Test"}
+        ,tags = {"@Regression"}
 )
 
-public class TestRunner {
+public class TestRunnerRegression {
 }

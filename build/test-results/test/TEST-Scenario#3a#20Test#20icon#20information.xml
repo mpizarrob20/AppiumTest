@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Scenario: Test icon information" tests="5" skipped="0" failures="0" errors="0" timestamp="2018-05-16T16:45:05" hostname="NI-NTB-020" time="15.025">
+  <properties/>
+  <testcase name="Given the application is open" classname="Scenario: Test icon information" time="0.0"/>
+  <testcase name="When the user clicks on the information icon" classname="Scenario: Test icon information" time="0.0"/>
+  <testcase name="And access information" classname="Scenario: Test icon information" time="0.0"/>
+  <testcase name="Then return to the main menu" classname="Scenario: Test icon information" time="0.0"/>
+  <testcase name="classMethod" classname="Scenario: Test icon information" time="37.942"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[May 16, 2018 12:44:59 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+]]></system-err>
+</testsuite>

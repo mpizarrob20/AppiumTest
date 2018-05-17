@@ -10,11 +10,6 @@ public class LoginObjects {
     public String mail = "com.restwla.z88ab174d:id/email";
     public String password = "com.restwla.z88ab174d:id/password";
     public String signUp = "com.restwla.z88ab174d:id/submit_button";
-    public String menu = "//android.widget.TextView[contains(@resource-id,'button_square_text') and @text='Testimonials (208)']";
-    public String feedback = "//android.widget.TextView[@text='Give us feedback']";
-    public String search_box = "com.alibaba.aliexpresshd:id/abs__search_src_text";
-    public String word_to_search = "jeans";
-    public String search_results = "com.alibaba.aliexpresshd:id/tv_product_list_tagged_title";
     public String iconInformation = "//android.widget.TextView[@text='Información']";
     public String iconGallery = "//android.widget.TextView[@text='Fotos (1013)']";
     public String tableReservation = "//android.widget.TextView[@text='TABLE RESERVATION']";

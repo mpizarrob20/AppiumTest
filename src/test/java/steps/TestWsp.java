@@ -1,6 +1,8 @@
 package steps;
 
 import Objects.LoginObjects;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -8,12 +10,11 @@ import cucumber.api.java.en.When;
 import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Keyboard;
+import org.openqa.selenium.interactions.touch.TouchActions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -37,14 +38,13 @@ import static org.junit.Assert.*;
 public class TestWsp {
     private AppiumDriver driver;
     private URL url;
-    Dimension size;
     LoginObjects objects_test = new LoginObjects();
 
-   @Given("^the installation of the app$")
-    public void setUp() throws MalformedURLException {
+    @Before
+    public void beforeScenario() throws MalformedURLException, InterruptedException {
         File app = new File("C:/Users/mpizarro/Downloads", "Hybrid.apk");
 
-        URL url = new URL("http://127.0.0.1:4723/wd/hub");
+        url = new URL("http://127.0.0.1:4723/wd/hub");
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("device", "Android");
@@ -54,16 +54,22 @@ public class TestWsp {
         capabilities.setCapability("appPackage", "com.restwla.z88ab174d");
         capabilities.setCapability("app", app.getAbsolutePath());
         capabilities.setCapability("browser", "");
-        //capabilities.setCapability("autoWebview", "true");
-        //capabilities.setCapability("appActivity", "com.contextlogic.wish.browse.BrowseActivity");
-        //capabilities.setCapability("autoDismissAlerts", true);
+
         driver = new AndroidDriver(url, capabilities);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
     }
 
     @After
-    public void tearDown() {
+    public void afterScenario() {
         driver.quit();
     }
+
+   @Given("^the application is open$")
+    public void ffgfgg() throws MalformedURLException, InterruptedException {
+        Thread.sleep(5000);
+        Assert.assertEquals(driver.findElement(By.xpath(objects_test.iconInformation)).getText(), "Información");
+     }
 
     //Icon Information
     @When("^the user clicks on the information icon$")
@@ -99,7 +105,7 @@ public class TestWsp {
 
     @And("^access the gallery$")
     public void access_the_gallery() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         WebDriverWait wait = new WebDriverWait(driver, 10);
         MobileElement my_photos = (MobileElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath(objects_test.myPhotos)));
         my_photos.click();
@@ -136,7 +142,7 @@ public class TestWsp {
         MobileElement user_password = (MobileElement) driver.findElement(By.id(objects_test.password));
         user_password.sendKeys(password);
 
-        MobileElement sign_button = (MobileElement) driver.findElement(By.xpath(objects_test.signUp));
+        MobileElement sign_button = (MobileElement) driver.findElement(By.id(objects_test.signUp));
         sign_button.click();
     }
 

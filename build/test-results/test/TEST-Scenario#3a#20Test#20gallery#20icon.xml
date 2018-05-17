@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Scenario: Test gallery icon" tests="5" skipped="0" failures="0" errors="0" timestamp="2018-05-16T16:45:43" hostname="NI-NTB-020" time="16.849">
+  <properties/>
+  <testcase name="Given the application is open" classname="Scenario: Test gallery icon" time="0.0"/>
+  <testcase name="When the user clicks on the gallery icon" classname="Scenario: Test gallery icon" time="0.0"/>
+  <testcase name="And access the gallery" classname="Scenario: Test gallery icon" time="0.0"/>
+  <testcase name="Then return to the main menu" classname="Scenario: Test gallery icon" time="0.0"/>
+  <testcase name="classMethod" classname="Scenario: Test gallery icon" time="39.41"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[May 16, 2018 12:45:37 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+]]></system-err>
+</testsuite>
